@@ -25,6 +25,7 @@ public class MyQueue<E>
     public boolean isEmpty()
     {
 
+        return false;
     }
 
     /**
@@ -34,6 +35,7 @@ public class MyQueue<E>
     public int size()
     {
 
+        return 0;
     }
 
     /**
@@ -43,6 +45,7 @@ public class MyQueue<E>
     public E peek()
     {
 
+        return null;
     }
 
     /**
@@ -54,7 +57,7 @@ public class MyQueue<E>
     }
 
     /**
-     * push push a new element to the queue
+     * push a new element to the queue
      */
     public void push(E item)
     {

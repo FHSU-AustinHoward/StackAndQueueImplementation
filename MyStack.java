@@ -36,6 +36,7 @@ public class MyStack<E>
     public boolean isEmpty()
     {
 
+        return false;
     }
 
     /**
@@ -44,6 +45,7 @@ public class MyStack<E>
     public E peek()
     {
 
+        return null;
     }
 
     /**
@@ -61,5 +63,6 @@ public class MyStack<E>
     public int size()
     {
 
+        return 0;
     }
 }
