@@ -6,61 +6,36 @@
  */
 import java.util.ArrayList;
 
-public class MyQueue<E>
-{
-    private ArrayList<E> list; // hold the elements in queue
-    private int tail; // index of the last element in queue
+public class MyQueue {
+    private ArrayList<Integer> queue;
 
-    /**
-     * constructor construct an empty queue
-     */
-    public MyQueue()
-    {
+    public MyQueue() {
+        queue = new ArrayList<>();
     }
 
-    /**
-     * isEmpty return true if the queue is empty; false otherwise
-     * @return true if the queue is empty; false otherwise
-     */
-    public boolean isEmpty()
-    {
-
-        return false;
+    public void enqueue(int value) {
+        queue.add(value);
     }
 
-    /**
-     * size return the size of the queue
-     * @return the number of elements in queue
-     */
-    public int size()
-    {
-
-        return 0;
+    public int dequeue() {
+        if (queue.isEmpty()) {
+            throw new IllegalStateException("Queue is empty");
+        }
+        return queue.remove(0);
     }
 
-    /**
-     * peek return the front element of the queue
-     * @return the front element of the queue. If the queue is empty, return null
-     */
-    public E peek()
-    {
-
-        return null;
+    public boolean isEmpty() {
+        return queue.isEmpty();
     }
 
-    /**
-     * pop remove the front element of the queue
-     */
-    public void pop()
-    {
-
+    public int size() {
+        return queue.size();
     }
 
-    /**
-     * push a new element to the queue
-     */
-    public void push(E item)
-    {
-
+    public int peek() {
+        if (queue.isEmpty()) {
+            throw new IllegalStateException("Queue is empty");
+        }
+        return queue.get(0);
     }
 }

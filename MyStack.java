@@ -8,61 +8,36 @@
  */
 import java.util.ArrayList;
 
-public class MyStack<E>
-{
-    private ArrayList<E> list; // used to store elements in stack
-    private int top; // the index of top element
+public class MyStack {
+    private ArrayList<Integer> stack;
 
-    /**
-     * constructor construct an empty stack
-     */
-    public MyStack()
-    {
-
+    public MyStack() {
+        stack = new ArrayList<>();
     }
 
-    /**
-     * push push a given element on the top of the stack
-     */
-    public void push(E item)
-    {
-
+    public void push(int value) {
+        stack.add(value);
     }
 
-    /**
-     * isEmpty return true if the stack is empty; false otherwise
-     * @return true if the stack is empty; false otherwise
-     */
-    public boolean isEmpty()
-    {
-
-        return false;
+    public int pop() {
+        if (stack.isEmpty()) {
+            throw new IllegalStateException("Stack is empty");
+        }
+        return stack.remove(stack.size() - 1);
     }
 
-    /**
-     * peek Return the top element
-     */
-    public E peek()
-    {
-
-        return null;
+    public boolean isEmpty() {
+        return stack.isEmpty();
     }
 
-    /**
-     * pop Remove the top element from the stack. If the stack is empty,nothing happen
-     */
-    public void pop()
-    {
-
+    public int size() {
+        return stack.size();
     }
 
-    /**
-     * size return the size of the stack
-     * @return number of elements in stack
-     */
-    public int size()
-    {
-
-        return 0;
+    public int peek() {
+        if (stack.isEmpty()) {
+            throw new IllegalStateException("Stack is empty");
+        }
+        return stack.get(stack.size() - 1);
     }
 }
