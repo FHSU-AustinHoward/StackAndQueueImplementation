@@ -1,12 +1,5 @@
-/**
- * class MyStack: A stack class implemented by using ArrayList
- * All stack elements are stored in an ArrayList. The top element
- * has index top
- *
- * @author Your Name
- * @version Date
- */
 import java.util.ArrayList;
+
 
 public class MyStack {
     private ArrayList<Integer> stack;
