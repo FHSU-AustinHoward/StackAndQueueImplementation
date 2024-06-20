@@ -6,7 +6,7 @@
  * @author Austin Howard
  * @version Jun 20, 2024
  */
-
+import java.util.Scanner;
 
 public class CSCI463ProjectTwo {
 
@@ -35,8 +35,28 @@ public class CSCI463ProjectTwo {
     }
 
     public static void main(String[] args) {
-        // Test cases for isPalindrome function
-        System.out.println(isPalindrome("A man, a plan, a canal, Panama")); // true
-        System.out.println(isPalindrome("Hello, World!")); // false
+        // Create a scanner object to read input
+        Scanner scanner = new Scanner(System.in);
+        String continueTesting = "YES";
+
+        while (continueTesting.equalsIgnoreCase("YES")) {
+            // Prompt the user to enter a sentence
+            System.out.print("Enter a sentence, I will tell you if it is a palindrome: ");
+            String input = scanner.nextLine();
+
+            // Check if the input sentence is a palindrome and display the result
+            if (isPalindrome(input)) {
+                System.out.println("\"" + input + "\" is a palindrome!");
+            } else {
+                System.out.println("\"" + input + "\" is not a palindrome!");
+            }
+
+            // Ask the user if they want to perform another test
+            System.out.print("Do you want another test (\"YES\" or \"NO\"): ");
+            continueTesting = scanner.nextLine();
+        }
+
+        // Close the scanner
+        scanner.close();
     }
 }
